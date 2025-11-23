@@ -39,12 +39,15 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <button
             onClick={() => scrollToSection("hero")}
-            className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-primary rounded-md"
+            className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-primary rounded-md group"
             aria-label="Go to home"
           >
-            <h1 className="text-2xl md:text-3xl font-display font-bold text-gradient">
-              Sri Ganesh Enterprises
-            </h1>
+            <div className="relative">
+              <h1 className="text-2xl md:text-3xl font-display font-bold text-gradient group-hover:scale-105 transition-transform duration-300">
+                Sri Ganesh Enterprises
+              </h1>
+              <div className="h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-primary to-secondary transition-all duration-300 rounded-full" />
+            </div>
           </button>
 
           {/* Desktop Navigation */}
@@ -53,9 +56,10 @@ const Navbar = () => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1"
+                className="relative text-foreground hover:text-primary transition-colors duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 group"
               >
                 {link.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300 rounded-full" />
               </button>
             ))}
           </div>

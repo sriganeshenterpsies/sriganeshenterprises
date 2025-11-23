@@ -1,6 +1,7 @@
-import ganeshHero from "@/assets/ganesh-hero.jpg";
+import ganeshHero from "@/assets/ganesh-idol-vibrant.jpg";
 import spicesBackground from "@/assets/spices-background.jpg";
 import { Button } from "@/components/ui/button";
+import SpiceParticles from "./SpiceParticles";
 
 const Hero = () => {
   const scrollToProducts = () => {
@@ -12,6 +13,9 @@ const Hero = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Animated spice particles */}
+      <SpiceParticles />
+      
       {/* Background with spices */}
       <div 
         className="absolute inset-0 z-0"
@@ -46,8 +50,24 @@ const Hero = () => {
 
             <p className="text-lg md:text-xl text-foreground/90 leading-relaxed">
               Experience the authentic flavors of India with our premium quality spices. 
-              Each blend is crafted with tradition, passion, and a commitment to purity.
+              Founded by a self-made woman entrepreneur, each blend is crafted with tradition, 
+              passion, and an unwavering commitment to purity since 2007.
             </p>
+            
+            <div className="flex flex-wrap items-center gap-4 text-sm md:text-base text-foreground/70">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                <span>Est. 2007</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+                <span>100% Natural</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                <span>Custom Blends Available</span>
+              </div>
+            </div>
 
             <div className="flex flex-wrap gap-4 pt-4">
               <Button 
@@ -74,13 +94,25 @@ const Hero = () => {
           {/* Right content - Ganesh idol */}
           <div className="relative animate-scale-in">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl blur-3xl animate-float" />
-              <img
-                src={ganeshHero}
-                alt="Colorful Lord Ganesh idol, the spiritual centerpiece of Sri Ganesh Enterprises symbolizing prosperity and tradition"
-                className="relative rounded-3xl shadow-2xl w-full max-w-lg mx-auto hover:scale-105 transition-transform duration-500"
-                loading="eager"
-              />
+              {/* Glowing orb effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-secondary/20 to-accent/30 rounded-3xl blur-3xl animate-float" />
+              <div className="absolute inset-0 bg-gradient-to-tl from-secondary/20 via-accent/20 to-primary/20 rounded-3xl blur-2xl animate-float" style={{ animationDelay: '1s', animationDuration: '4s' }} />
+              
+              {/* Main image with enhanced styling */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl ring-4 ring-primary/20 hover:ring-primary/40 transition-all duration-500">
+                <img
+                  src={ganeshHero}
+                  alt="Magnificent colorful Lord Ganesh idol, the divine centerpiece of Sri Ganesh Enterprises symbolizing prosperity, wisdom and tradition"
+                  className="relative w-full max-w-lg mx-auto hover:scale-105 transition-transform duration-700"
+                  loading="eager"
+                />
+                {/* Overlay gradient for depth */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/10 to-transparent pointer-events-none" />
+              </div>
+              
+              {/* Decorative corner accents */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-primary to-transparent rounded-full blur-xl opacity-60 animate-pulse" />
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-tr from-secondary to-transparent rounded-full blur-xl opacity-50 animate-pulse" style={{ animationDelay: '1s' }} />
             </div>
           </div>
         </div>

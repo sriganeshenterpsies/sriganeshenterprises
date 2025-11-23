@@ -44,18 +44,21 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Contact</h4>
-            <a 
-              href="mailto:sriganeshenterprises.spices@gmail.com"
-              className="flex items-start space-x-2 text-background/80 hover:text-background transition-colors group"
-            >
-              <Mail className="w-5 h-5 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
-              <span className="text-sm break-all">
-                sriganeshenterprises.spices@gmail.com
-              </span>
-            </a>
-          </div>
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold">Contact</h4>
+              <a 
+                href="mailto:sriganeshenterprises.spices@gmail.com"
+                className="flex items-start space-x-2 text-background/80 hover:text-background transition-colors group"
+              >
+                <Mail className="w-5 h-5 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <span className="text-sm break-all">
+                  sriganeshenterprises.spices@gmail.com
+                </span>
+              </a>
+              <p className="text-background/70 text-sm pt-2">
+                Founded 2007 | Serving authentic Indian spices with passion
+              </p>
+            </div>
         </div>
 
         {/* Bottom Bar */}

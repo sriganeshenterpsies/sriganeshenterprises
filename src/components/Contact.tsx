@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Contact = () => {
@@ -67,22 +67,46 @@ const Contact = () => {
 
             {/* CTA Section */}
             <div className="flex flex-col justify-center animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-              <div className="p-8 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/20">
-                <h3 className="text-2xl font-display font-bold text-foreground mb-4">
-                  Ready to Order?
-                </h3>
-                <p className="text-foreground/80 mb-6 leading-relaxed">
-                  Contact us today to place your order or inquire about our premium spices. 
-                  We're here to help you bring authentic Indian flavors to your kitchen.
-                </p>
-                <Button 
-                  size="lg"
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                  onClick={() => window.location.href = "mailto:sriganeshenterprises.spices@gmail.com"}
-                >
-                  <Mail className="w-5 h-5 mr-2" />
-                  Send Email
-                </Button>
+              <div className="relative p-8 rounded-xl bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 border-2 border-primary/30 overflow-hidden group hover:border-primary/50 transition-all duration-300">
+                {/* Animated background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Sparkle decoration */}
+                <div className="absolute top-4 right-4 text-primary/20 group-hover:text-primary/40 transition-colors">
+                  <Sparkles className="w-8 h-8 animate-pulse" />
+                </div>
+                
+                <div className="relative z-10">
+                  <h3 className="text-2xl md:text-3xl font-display font-bold text-gradient mb-4">
+                    Ready to Order?
+                  </h3>
+                  <p className="text-foreground/80 mb-6 leading-relaxed">
+                    Contact us today to place your order or inquire about our premium spices and custom blends. 
+                    We're here to help you bring authentic Indian flavors to your kitchen.
+                  </p>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center gap-2 text-sm text-foreground/70">
+                      <div className="w-2 h-2 rounded-full bg-primary" />
+                      <span>Regular & custom spice blends</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-foreground/70">
+                      <div className="w-2 h-2 rounded-full bg-secondary" />
+                      <span>Bulk orders available</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-foreground/70">
+                      <div className="w-2 h-2 rounded-full bg-accent" />
+                      <span>Fast response time</span>
+                    </div>
+                  </div>
+                  <Button 
+                    size="lg"
+                    className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                    onClick={() => window.location.href = "mailto:sriganeshenterprises.spices@gmail.com"}
+                  >
+                    <Mail className="w-5 h-5 mr-2" />
+                    Send Email Now
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

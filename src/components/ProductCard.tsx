@@ -7,9 +7,10 @@ interface ProductCardProps {
   description: string;
   image: string;
   variants?: string[];
+  isCustom?: boolean;
 }
 
-const ProductCard = ({ name, description, image, variants }: ProductCardProps) => {
+const ProductCard = ({ name, description, image, variants, isCustom }: ProductCardProps) => {
   return (
     <Card className="overflow-hidden hover-lift card-glow group h-full">
       <div className="relative h-64 overflow-hidden bg-muted">
@@ -20,6 +21,11 @@ const ProductCard = ({ name, description, image, variants }: ProductCardProps) =
           loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        {isCustom && (
+          <div className="absolute top-4 right-4 bg-gradient-to-r from-primary to-secondary text-primary-foreground px-3 py-1 rounded-full text-xs font-semibold shadow-lg animate-scale-in">
+            Special Request
+          </div>
+        )}
       </div>
       
       <CardContent className="p-6 space-y-4">
